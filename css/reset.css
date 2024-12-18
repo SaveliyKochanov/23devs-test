@@ -1,0 +1,119 @@
+body {
+	margin: 0 auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+legend,
+fieldset {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+}
+
+legend {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+input {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	outline: none;
+	border: none;
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ol {
+	list-style: decimal;
+	margin: 0;
+	padding: 0;
+}
+
+picture {
+	margin: 0;
+	padding: 0;
+}
+
+button,
+a {
+	text-decoration: none;
+	color: currentColor;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	border: none;
+}
+
+/* Утилитарный класс для скрытия элементов визуально, но оставление их доступными для скринридеров */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* Класс, чтобы скрыть для скринридеров */
+.not-src-only {
+	position: static;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+	display: block;
+}
+
+img,
+svg {
+	max-inline-size: 100%;
+	block-size: auto;
+}

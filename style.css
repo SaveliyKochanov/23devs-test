@@ -1,0 +1,180 @@
+:root {
+	--accent-font-color: #1a1c1e;
+	--sub-font-color: #8c9297;
+}
+.blur {
+	position: fixed;
+	top: -20px;
+	z-index: -999;
+	inline-size: 100%;
+}
+
+.page {
+	font-family: Inter, sans-serif;
+	background-color: #edf1f3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	align-items: center;
+}
+
+.registration {
+	padding: 60px 0;
+}
+
+.container {
+	padding-inline-start: 24px;
+	padding-inline-end: 24px;
+	inline-size: 375px;
+}
+
+.registration__form {
+	display: flex;
+	justify-self: center;
+	flex-direction: column;
+	row-gap: 24px;
+	inline-size: 100%;
+	margin-block-end: 60px;
+}
+
+.form__header {
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+}
+
+.form__title {
+	color: var(--accent-font-color);
+	font-weight: 700;
+	font-size: clamp(2rem, 1.7139rem + 1.2207vw, 2.8125rem);
+	line-height: 130%;
+	letter-spacing: -2%;
+}
+
+.form__description {
+	color: var(--sub-font-color);
+	font-weight: 500;
+	font-size: clamp(0.75rem, 0.618rem + 0.5634vw, 1.125rem);
+	line-height: 140%;
+	letter-spacing: -1%;
+}
+
+.form__fields {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.form__field {
+	display: flex;
+	flex-direction: column;
+	row-gap: 4px;
+}
+
+.field__label {
+	color: var(--sub-font-color);
+	font-size: clamp(0.75rem, 0.706rem + 0.1878vw, 0.875rem);
+}
+
+.form__field_password {
+	position: relative;
+}
+
+.field__password-toggle {
+	position: absolute;
+	right: 5%;
+	top: 51%;
+	cursor: pointer;
+}
+
+.field__input {
+	inline-size: 100%;
+	border-radius: 10px;
+	padding-inline-start: 14px;
+	padding-inline-end: 14px;
+	padding-block-start: 12.5px;
+	padding-block-end: 12.5px;
+	font-weight: 400;
+	opacity: 0.8;
+	font-size: 14px;
+}
+
+.field__error {
+	font-size: 10px;
+	color: red;
+}
+
+.field__input:focus {
+	outline: none;
+}
+
+.field__input:focus-visible {
+	outline: 2px solid #000000;
+	outline-offset: 0px;
+}
+
+.field__input--date {
+	background: #ffffff url('./images/calendar.svg');
+	background-repeat: no-repeat;
+	background-position: 95%;
+	background-size: 14px;
+	cursor: pointer;
+	min-block-size: 42px;
+	appearance: none;
+}
+
+::-webkit-calendar-picker-indicator {
+	opacity: 0;
+	cursor: pointer;
+}
+
+.form__button {
+	position: relative;
+	padding-block-start: 14px;
+	padding-block-end: 14px;
+	font-size: 14px;
+	line-height: 140%;
+	letter-spacing: -1%;
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%), #1d61e7;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 10px;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 0 1px #375dfb;
+	transition: 0.3s ease;
+}
+
+.form__button:hover {
+	background: linear-gradient(to top, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%), #1949a8;
+	color: #fff;
+}
+
+.authorization {
+	text-align: center;
+	font-size: clamp(0.75rem, 0.662rem + 0.3756vw, 1rem);
+	line-height: 140%;
+	letter-spacing: -1%;
+	color: var(--sub-font-color);
+}
+
+.authorization__link {
+	color: #4d81e7;
+}
+
+@media (min-width: 767px) {
+	.blur {
+		top: -220px;
+	}
+
+	.container {
+		inline-size: 600px;
+	}
+
+	.field__input--date {
+		background-position: 98%;
+	}
+
+	.field__password-toggle {
+		right: 2.1%;
+	}
+}
