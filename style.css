@@ -77,14 +77,14 @@
 	font-size: clamp(0.75rem, 0.706rem + 0.1878vw, 0.875rem);
 }
 
-.form__field_password {
+.form__field--container {
 	position: relative;
 }
 
 .field__password-toggle {
 	position: absolute;
-	right: 5%;
-	top: 51%;
+	right: 4%;
+	transform: translateY(-28px);
 	cursor: pointer;
 }
 
@@ -136,7 +136,12 @@
 	font-size: 14px;
 	line-height: 140%;
 	letter-spacing: -1%;
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%), #1d61e7;
+	background: linear-gradient(
+			to top,
+			rgba(255, 255, 255, 0.12) 0%,
+			rgba(255, 255, 255, 0.12) 100%
+		),
+		#1d61e7;
 	color: #fff;
 	font-weight: 500;
 	border-radius: 10px;
@@ -145,7 +150,12 @@
 }
 
 .form__button:hover {
-	background: linear-gradient(to top, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%), #1949a8;
+	background: linear-gradient(
+			to top,
+			rgba(255, 255, 255, 0.12) 0%,
+			rgba(255, 255, 255, 0.12) 100%
+		),
+		#1949a8;
 	color: #fff;
 }
 
@@ -176,5 +186,9 @@
 
 	.field__password-toggle {
 		right: 2.1%;
+	}
+
+	.field__error {
+		font-size: 13px;
 	}
 }

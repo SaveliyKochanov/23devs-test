@@ -12,9 +12,19 @@
 		<img class="blur" src="./images/Blur.png" alt="" />
 		<section class="registration">
 			<div class="container">
-				<form class="registration__form form" action="/da" method="post" novalidate data-js-form>
+				<form
+					class="registration__form form"
+					action="/some-post-endpoint"
+					method="post"
+					novalidate
+					data-js-form
+				>
 					<a class="arrow-link" href="#">
-						<img class="arrow-image" src="./images/arrow.svg" alt="Go back arrow" />
+						<img
+							class="arrow-image"
+							src="./images/arrow.svg"
+							alt="Go back arrow"
+						/>
 					</a>
 					<div class="form__header">
 						<h1 class="form__title">Регистрация</h1>
@@ -37,56 +47,134 @@
 								aria-errormessage="first-name-error"
 								title="Имя не должно содержать символов или цифр"
 							/>
-							<span class="field__error" id="first-name-error" data-field-errors></span>
+							<span
+								class="field__error"
+								id="first-name-error"
+								data-field-errors
+							></span>
 						</div>
 
 						<div class="form__field">
 							<label class="field__label" for="last-name">Фамилия</label>
-							<input class="field__input" placeholder="Введите фамилию" minlength="2" type="text" id="last-name" name="last-name" pattern="^[a-zA-Zа-яА-ЯёЁ]{1}[a-zA-Zа-яА-ЯёЁ\s]{0,48}[a-zA-Zа-яА-ЯёЁ]{1}$" required aria-errormessage="last-name-error" title="Фамилия не должна содержать символов или цифр" />
-							<span class="field__error" id="last-name-error" data-field-errors></span>
+							<input
+								class="field__input"
+								placeholder="Введите фамилию"
+								minlength="2"
+								type="text"
+								id="last-name"
+								name="last-name"
+								pattern="^[a-zA-Zа-яА-ЯёЁ]{1}[a-zA-Zа-яА-ЯёЁ\s]{0,48}[a-zA-Zа-яА-ЯёЁ]{1}$"
+								required
+								aria-errormessage="last-name-error"
+								title="Фамилия не должна содержать символов или цифр"
+							/>
+							<span
+								class="field__error"
+								id="last-name-error"
+								data-field-errors
+							></span>
 						</div>
 
 						<div class="form__field">
-							<label class="field__label" for="email">Адрес электронной почты</label>
-							<input class="field__input" placeholder="test@gmail.com" type="email" id="email" name="email" required aria-errormessage="email-error" data-email />
-							<span class="field__error" id="email-error" data-field-errors></span>
+							<label class="field__label" for="email"
+								>Адрес электронной почты</label
+							>
+							<input
+								class="field__input"
+								placeholder="test@gmail.com"
+								type="email"
+								id="email"
+								name="email"
+								required
+								aria-errormessage="email-error"
+								data-email
+							/>
+							<span
+								class="field__error"
+								id="email-error"
+								data-field-errors
+							></span>
 						</div>
 
 						<div class="form__field">
 							<label class="field__label" for="birth-day">Дата рождения</label>
-							<input class="field__input field__input--date" type="date" id="birth-day" name="birth-day" required aria-errormessage="birth-day-error" data-birthday />
-							<span class="field__error" id="birth-day-error" data-field-errors></span>
+							<input
+								class="field__input field__input--date"
+								type="date"
+								id="birth-day"
+								name="birth-day"
+								required
+								aria-errormessage="birth-day-error"
+								data-birthday
+							/>
+							<span
+								class="field__error"
+								id="birth-day-error"
+								data-field-errors
+							></span>
 						</div>
 
 						<div class="form__field form__field_password">
 							<label class="field__label" for="password">Пароль</label>
-							<input
-								class="field__input field__input--password"
-								type="password"
-								minlength="8"
-								id="password"
-								name="password"
-								required
-								aria-errormessage="password-error"
-								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,}"
-								title="Пароль должен содержать минимум одну
+							<div class="form__field--container">
+								<input
+									class="field__input field__input--password"
+									type="password"
+									minlength="8"
+									id="password"
+									name="password"
+									required
+									aria-errormessage="password-error"
+									pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,}"
+									title="Пароль должен содержать минимум одну
 							цифру, по одной заглавной и строчной букве, а также один символ."
-								data-password
-							/>
-							<div class="field__password-toggle">
-								<img class="password-toggle__image" src="./images/eye-close.svg" alt="Переключатель видимости пароля" />
+									data-password
+							
 							</div>
-							<span class="field__error" id="password-error" data-field-errors></span>
+							<div class="field__password-toggle">
+								<img
+									class="password-toggle__image"
+									src="./images/eye-close.svg"
+									alt="Переключатель видимости пароля"
+								/>
+							</div>
+							<span
+								class="field__error"
+								id="password-error"
+								data-field-errors
+							></span>
+							</div>
 						</div>
 
 						<div class="form__field">
-							<label class="field__label" for="confirm-password">Подтверждение пароля</label>
-							<input class="field__input" type="password" id="confirm-password" name="confirm-password" required aria-errormessage="confirm-password-error" data-confirm-password />
-							<span class="field__error" id="confirm-password-error" data-field-errors></span>
+							<label class="field__label" for="confirm-password"
+								>Подтверждение пароля</label
+							>
+							<input
+								class="field__input"
+								type="password"
+								id="confirm-password"
+								name="confirm-password"
+								required
+								aria-errormessage="confirm-password-error"
+								data-confirm-password
+							/>
+							<span
+								class="field__error"
+								id="confirm-password-error"
+								data-field-errors
+							></span>
 						</div>
 					</fieldset>
 
-					<button class="form__button" type="submit" id="form-button" data-button-submit>Зарегистрироваться</button>
+					<button
+						class="form__button"
+						type="submit"
+						id="form-button"
+						data-button-submit
+					>
+						Зарегистрироваться
+					</button>
 				</form>
 				<div class="authorization">
 					Уже есть аккаунт?
