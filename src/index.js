@@ -1,4 +1,4 @@
-import { FormValidation } from './validation.js'
+import { FormValidation } from './js/validation.js'
 
 const passwordToggle = document.querySelector('.field__password-toggle')
 const passwordToggleImage = document.querySelector('.password-toggle__image')
@@ -9,9 +9,9 @@ new FormValidation()
 passwordToggle.addEventListener('click', () => {
 	if (passwordInput.type == 'password') {
 		passwordInput.type = 'text'
-		passwordToggleImage.src = './../images/eye.svg'
+		passwordToggleImage.src = '../images/eye.svg'
 	} else {
 		passwordInput.type = 'password'
-		passwordToggleImage.src = './../images/eye-close.svg'
+		passwordToggleImage.src = '../images/eye-close.svg'
 	}
 })

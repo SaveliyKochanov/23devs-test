@@ -14,29 +14,22 @@ export class FormValidation {
 	}
 
 	manageErrors(fieldInputElement, errorMessages) {
-		const fieldErrorsElement = fieldInputElement.parentElement.querySelector(
-			this.selectors.fieldErrors
-		)
+		const fieldErrorsElement = fieldInputElement.parentElement.querySelector(this.selectors.fieldErrors)
 
 		if (!fieldErrorsElement) {
-			f
+			return
 		}
 
-		fieldErrorsElement.innerHTML = errorMessages
-			.map(message => `<span class="field__error">${message} </span>`)
-			.join('')
+		fieldErrorsElement.innerHTML = errorMessages.map(message => `<span class="field__error">${message} </span>`).join('')
 	}
 
 	errorMessages = {
 		valueMissing: () => 'Пожалуйста, заполните это поле',
 		patternMismatch: ({ title }) => title || 'Данные не соответствуют формату',
-		tooShort: ({ minLength }) =>
-			`Слишком короткое значение, минимум символов - ${minLength}`,
-		tooLong: ({ maxLength }) =>
-			`Слишком длинное значение, ограничение символов - ${maxLength}`,
+		tooShort: ({ minLength }) => `Слишком короткое значение, минимум символов - ${minLength}`,
+		tooLong: ({ maxLength }) => `Слишком длинное значение, ограничение символов - ${maxLength}`,
 		passwordMismatch: () => 'Пароли не совпадают',
-		invalidEmail: () =>
-			'введите корректный email. Допустимый формат: имя user@example.com',
+		invalidEmail: () => 'введите корректный email. Допустимый формат: имя user@example.com',
 		notIsFullAge: () => 'Вы должны быть старше 18 лет для регистрации',
 	}
 
@@ -44,13 +37,11 @@ export class FormValidation {
 		const errors = fieldInputElement.validity
 		const errorMessages = []
 
-		Object.entries(this.errorMessages).forEach(
-			([errorType, getErrorMessage]) => {
-				if (errors[errorType]) {
-					errorMessages.push(getErrorMessage(fieldInputElement))
-				}
+		Object.entries(this.errorMessages).forEach(([errorType, getErrorMessage]) => {
+			if (errors[errorType]) {
+				errorMessages.push(getErrorMessage(fieldInputElement))
 			}
-		)
+		})
 
 		if (fieldInputElement.matches(this.selectors.birthday)) {
 			if (!this.isFullAge(fieldInputElement.value)) {
@@ -75,6 +66,14 @@ export class FormValidation {
 		this.manageErrors(fieldInputElement, errorMessages)
 
 		const isValid = errorMessages.length === 0
+
+		if (isValid) {
+			fieldInputElement.classList.remove('invalid')
+			fieldInputElement.classList.add('valid')
+		} else {
+			fieldInputElement.classList.remove('valid')
+			fieldInputElement.classList.add('invalid')
+		}
 		fieldInputElement.ariaInvalid = !isValid
 
 		return isValid
@@ -91,8 +90,7 @@ export class FormValidation {
 	}
 
 	isValidEmail(email) {
-		const emailRegex =
-			/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~\-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+		const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~\-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 		return emailRegex.test(email)
 	}
 
@@ -101,10 +99,7 @@ export class FormValidation {
 		const today = new Date()
 		const age = today.getFullYear() - userDate.getFullYear()
 
-		const isBirthdayPassed =
-			today.getMonth() > userDate.getMonth() ||
-			(today.getMonth() === userDate.getMonth() &&
-				today.getDate() >= userDate.getDate())
+		const isBirthdayPassed = today.getMonth() > userDate.getMonth() || (today.getMonth() === userDate.getMonth() && today.getDate() >= userDate.getDate())
 
 		return age > 18 || (age === 18 && isBirthdayPassed)
 	}
@@ -117,9 +112,7 @@ export class FormValidation {
 			return
 		}
 
-		const requiredInputElements = [...event.target.elements].filter(
-			element => element.required
-		)
+		const requiredInputElements = [...event.target.elements].filter(element => element.required)
 		let isFormValid = true
 
 		requiredInputElements.forEach(element => {
